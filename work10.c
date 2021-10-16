@@ -38,6 +38,7 @@ int main() {
    struct menu *test3 = insert_front(test2, f3, p3, a3);
 
    print_list(test3);
+   free_list(test3);
    //print_menu(free_list(test3));
    //free(test);
    //printf("Note: price and number of food is randomized. \n");
