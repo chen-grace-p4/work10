@@ -33,7 +33,6 @@ int main() {
    char * f3 = "pear";
    double p3 = rand() / 100000000.0;
    int a3 = rand() / 100000000;
-   insert_front(test2, f2, p2, a2);
    //struct menu *test3 = make_menu(f3, p3, a3, test2);
    struct menu *test3 = insert_front(test2, f3, p3, a3);
 
