@@ -75,8 +75,9 @@ struct menu * insert_front(struct menu * current, char* new_f, double new_p, int
 
 struct menu * free_list(struct menu * current) {
    while (current != NULL) {
+      struct menu * temp = current;
       free(current);
-      current = current->next;
+      current = temp->next;
    }
    return current;
 }
