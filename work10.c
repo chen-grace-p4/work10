@@ -64,5 +64,9 @@ struct menu * remove_node(struct menu * current, int amount) {
       temp = current;
       current = current->next;
    }
+   //From class:
+   //temp = curr->next
+   //curr->next = temp->next
+   //free(temp)
    return front;
 }
