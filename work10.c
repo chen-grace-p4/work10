@@ -41,25 +41,28 @@ struct menu * insert_front(struct menu * current, char* new_f, double new_p, int
 struct menu * free_list(struct menu * l) {
    struct menu * temp = l;
    while(l) {
-   	//printf("\tfreeing_node: ");
-   	//print_menu(l);
    	l = l->next;
    	free(temp);
    	temp = l;
-   	//printf("\n");
 	}
 	return l;
 }
 
 struct menu * remove_node(struct menu * current, int amount) {
-/*
-	if (current->amount == amount) {
-		struct menu * after_next;
-		after_next = (current->next)->next;
-		current->next = after_next;
-	}
-	*/
-	if(current->amount == amount) {
-		free(current);
-	}
+   struct menu * front = current;
+   struct menu * temp;
+   if (current->amount == amount) {
+      temp = current->next;
+      free(current);
+      return temp;
+   }
+	while (current) {
+      if (current->amount == amount) {
+         temp->next = current->next;
+         free(current);
+      }
+      temp = current;
+      current = current->next;
+   }
+   return front;
 }
