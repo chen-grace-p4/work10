@@ -37,8 +37,10 @@ int main() {
    printf("\nAfter remove_node: \n");
    print_list(list);
 
-   list = free_list(list);
-   //print_list(list);
+   //list = free_list(list);
+   printf("\nReturn value of free:\n");
+   printf("%p\n", free_list(list));
+   print_list(list);
 
    return 0;
 }
